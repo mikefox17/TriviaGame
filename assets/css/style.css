@@ -1,0 +1,35 @@
+body {
+  background-color: #353a3f;
+}
+
+div.jumbotron {
+  background-image: url(../images/img3.png);
+  background-position: 0% 25%;
+  background-size: cover;
+  height: 200px;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+.jumbotron .container {
+  position: relative;
+  top: 50px;
+}
+#timer {
+  width: 7%;
+  margin: 50px 10px 0px 10px;
+  text-align: center;
+  font-size: 50px;
+  border-radius: 5px;
+  border: none;
+  background: green;
+}
+#restart {
+  cursor: pointer;
+  background: green;
+  color: white;
+  font-weight: bold;
+  height: 75px;
+  font-size: 22px;
+}
