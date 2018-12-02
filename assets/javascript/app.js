@@ -1,17 +1,27 @@
+//on submit of form stop timer
 function game() {
   stopTimer();
 
   var total = 5;
   var score = 0;
-
+  //getting users answers from form, questions 1-5 plus the value of A-D for input
   var q1 = document.forms["quiz"]["q1"].value;
   var q2 = document.forms["quiz"]["q2"].value;
   var q3 = document.forms["quiz"]["q3"].value;
   var q4 = document.forms["quiz"]["q4"].value;
   var q5 = document.forms["quiz"]["q5"].value;
 
-  // Counting score
+  //for loop that ensures the user is answering all the questions, if not the quiz is reset
+  for (i = 1; i <= total; i++) {
+    if (eval("q" + i) == null || eval("q" + i) == "") {
+      alert("You didn't answer question " + i);
+      return false;
+    }
+  }
+
+  // A VAR array of correct answers
   var answers = ["b", "b", "d", "b", "a"];
+  //for loop that checks the checks the users input vs the answers and adds to the score if
   for (i = 1; i <= total; i++) {
     if (eval("q" + i) == answers[i - 1]) {
       score++;
@@ -19,9 +29,9 @@ function game() {
     console.log(eval("q" + i) + answers[i - 1]);
   }
 
-  // Results
+  // Results will be printed as html and concatenate with the score
   var results =
-    "<h4>YEEEHAW, You!</h4>" +
+    "<h4>YEEEHAW, You're a real Huckleberry!!</h4>" +
     "<p>Correct Answers: " +
     score +
     "</p>" +
@@ -31,11 +41,13 @@ function game() {
     "<p>Total Score: " +
     (score / total) * 100 +
     "%";
-  $("#layout").html(results);
 
-  //document.querySelector("#layout").innerHTML = results;
+  //had this working at one point
+  //$("#layout").html(results);
 
-  // Not actually submitting anything
+  //flashes to the results on submit or time over
+  document.querySelector("#layout").innerHTML = results;
+
   return false;
 }
 
@@ -45,6 +57,7 @@ var timer = setInterval(timerCounter, 1000);
 
 function timerCounter() {
   time--;
+  //$("timer").innerHTML(time);
   document.getElementById("timer").textContent = time;
   if (time <= 10 && time != 0) {
     red();

@@ -14,6 +14,14 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+  <style>
+
+body {
+  background-color: #343a40;
+
+}
+
+  </style>
 	
 </head>
 
@@ -24,33 +32,36 @@
         
         
     </div>
+    <div class='container'>
+    <div class='jumbotron'>
+      <h1>Doc Holliday's Trials & Tribulations</h1>
+      
+    </div>
+  </div>
+    <div class="container">
     
-    <div class='container bg-dark'>
-
       <div class='row'>
         <div class='col-lg-12'>
           <div class='card'>
-            <div class='jumbotron'>
-              <h1>Doc Holliday's Trials & Tribulations</h1>
-              
-            </div>
+            <div class='card-header bg-dark text-light text-center'>The world's most famous gunslinger</div>
+            
             <div class='card-body' id='layout'>
               <div class='time-remaining'></div>
             
-            
+            <!--used an input form to build the quiz html with radio inputs, made collecting user inputs to compare with the correct answers in js very easy-->
               <form id='quiz' name='quiz' onsubmit='return game(); timerCounter();'>
               <!--question1-->
               <h4>1. What was Doc's profession before becoming a gunslinger?</h4>
               <input type='radio' name='q1' value='a' id='q1a'> Doctor <br>
-              <input type='radio' name='q1' value='b' id='q1b'> Dentist <br><input type='radio' name='q1' value='c' id='q1c'> Professor <br><input type='radio' name='q1' value='d' id='q1d'> Hot-air baloon Pilot <br><br>
+              <input type='radio' name='q1' value='b' id='q1b'> Dentist <br><input type='radio' name='q1' value='c' id='q1c'> Professor <br><input type='radio' name='q1' value='d' id='q1d'> Hot-air balloon Pilot <br><br>
               <!--question2-->
               <h4>2. What disease ultimatley killed Doc?</h4>
               <input type='radio' name='q2' value='a' id='q2a'> Lumbago <br>
               <input type='radio' name='q2' value='b' id='q2b'> Tuberculosis <br><input type='radio' name='q2' value='c' id='q2c'> Cancer <br><input type='radio' name='q2' value='d' id='q2d'> Lupus <br><br>
               <!--question3-->
-              <h4>3. What lawman did he team up with to take down local outlaws?</h4>
+              <h4>3. Which lawman did he team up with to take down local outlaws?</h4>
               <input type='radio' name='q3' value='a' id='q3a'> Wild Bill Hickok <br>
-              <input type='radio' name='q3' value='b' id='q3b'> Heck Thomas <br><input type='radio' name='q3' value='c' id='q3c'> Pat Garrett <br><input type='radio' name='q3' value='d' id='q3d'> Virgil Earp <br><br>
+              <input type='radio' name='q3' value='b' id='q3b'> Billy the Kid <br><input type='radio' name='q3' value='c' id='q3c'> Pat Garrett <br><input type='radio' name='q3' value='d' id='q3d'> Virgil Earp <br><br>
               <!--question4-->
               <h4>4.  Holliday met Mary Catherine Elder Haroney, who became his travelling companion. What was her nickname?</h4>
               <input type='radio' name='q4' value='a' id='q4a'> Tall Cathy <br>
@@ -59,10 +70,11 @@
               <h4>5. How old was Doc when he died?</h4>
               <input type='radio' name='q5' value='a' id='q5a'> 36 <br>
               <input type='radio' name='q5' value='b' id='q5b'> 27 <br><input type='radio' name='q5' value='c' id='q5c'> 52 <br><input type='radio' name='q5' value='d' id='q5d'> 66 <br><br>
-            
-            
+              
               <hr>
-              <input type='sumbit' value='Submit' class='btn btn-primary'>
+              <input type='submit' value='Submit' class='btn btn-primary'>
+            
+            
             
             
             </form>
@@ -70,7 +82,8 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
+  
           
             
             
