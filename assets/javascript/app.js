@@ -21,12 +21,11 @@ function game() {
 
   // A VAR array of correct answers
   var answers = ["b", "b", "d", "b", "a"];
-  //for loop that checks the checks the users input vs the answers and adds to the score if
+  //for loop that checks the users input vs the answers and adds to the score if answer is correct
   for (i = 1; i <= total; i++) {
     if (eval("q" + i) == answers[i - 1]) {
       score++;
     }
-    console.log(eval("q" + i) + answers[i - 1]);
   }
 
   // Results will be printed as html and concatenate with the score as below
