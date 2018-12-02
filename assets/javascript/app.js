@@ -29,7 +29,7 @@ function game() {
     console.log(eval("q" + i) + answers[i - 1]);
   }
 
-  // Results will be printed as html and concatenate with the score
+  // Results will be printed as html and concatenate with the score as below
   var results =
     "<h4>YEEEHAW, You're a real Huckleberry!!</h4>" +
     "<p>Correct Answers: " +
@@ -45,21 +45,22 @@ function game() {
   //had this working at one point
   //$("#layout").html(results);
 
-  //flashes to the results on submit or time over
+  //prints the results plus the html code above onto the page
   document.querySelector("#layout").innerHTML = results;
 
   return false;
 }
 
-//Timer
+//Timer set to 30 seconds, inverals of 1 second --
 var time = 30;
 var timer = setInterval(timerCounter, 1000);
 
 function timerCounter() {
   time--;
-  //$("timer").innerHTML(time);
+  //selects timer id in html and runs the function when page is loaded
   document.getElementById("timer").textContent = time;
   if (time <= 10 && time != 0) {
+    //when timer hits below 10 secinds the timer will change color ro red to warn user that time is almost up
     red();
   } else if (time < 1) {
     clearInterval(timer);
@@ -68,7 +69,7 @@ function timerCounter() {
   }
 }
 
-// Stops the timer when the form is submitted
+// Stops the timer when the form is submitted and restarts when user clicks restart
 function stopTimer() {
   clearTimeout(timer);
   reloadButton();
